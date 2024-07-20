@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+.sticky-navbar {
+   position: sticky;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+}
+
+.sidebar {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 250px;
+   height: 100%;
+   background-color: #212529;
+   transition: 0.3s;
+   overflow-x: hidden;
+}
+
+.sidebar a {
+   display: block;
+}
+
+.sidebar-hidden {
+   width: 0;
+}
+
+.main-content {
+   transition: 0.3s;
+   margin-left: 250px;
+}
+
+.content-expanded {
+   transition: 0.3s;
+   margin-left: 0;
+}
+
+.loading {
+   width: 160px;
+   height: 160px;
+   color: #0d6efd;
+   background: radial-gradient(
+            150% 150% at left -40% top -40%,
+            #0000 98%,
+            currentColor
+         )
+         left top,
+      radial-gradient(150% 150% at right -40% top -40%, #0000 98%, currentColor)
+         right top,
+      radial-gradient(
+            150% 150% at left -40% bottom -40%,
+            #0000 98%,
+            currentColor
+         )
+         left bottom,
+      radial-gradient(
+            150% 150% at right -40% bottom -40%,
+            #0000 98%,
+            currentColor
+         )
+         right bottom;
+   background-size: 50.3% 50.3%;
+   background-repeat: no-repeat;
+   -webkit-mask: radial-gradient(circle 10px, #0000 90%, #000);
+   mask: radial-gradient(circle 10px, #0000 90%, #000);
+   animation: sh7 0.75s infinite linear;
+}
+
+@keyframes sh7 {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}

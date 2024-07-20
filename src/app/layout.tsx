@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Andika } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const andika = Andika({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <body className={andika.className}>{children}</body>
+         <body
+            className={`${andika.className} bg-color-dark text-color-primary`}
+         >
+            <Navbar />
+            {children}
+         </body>
       </html>
    );
 }
