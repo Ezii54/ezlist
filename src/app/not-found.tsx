@@ -19,7 +19,7 @@ const Page = () => {
                href={"/"}
                className="text-color-primary hover:text-color-accent transition-all text-bold text-2xl underline"
             >
-               Kembali
+               Back to Homepage
             </Link>
          </div>
       </div>

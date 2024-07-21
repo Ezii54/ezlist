@@ -1,7 +1,10 @@
+/* default */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* end of default */
 
+/* reset */
 *,
 *::before,
 *::after {
@@ -9,43 +12,18 @@
    padding: 0;
    margin: 0;
 }
+/* end of reset */
 
+/* navbar */
 .sticky-navbar {
    position: sticky;
    top: 0;
    width: 100%;
    z-index: 1000;
 }
+/* end of navbar */
 
-.sidebar {
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: 250px;
-   height: 100%;
-   background-color: #212529;
-   transition: 0.3s;
-   overflow-x: hidden;
-}
-
-.sidebar a {
-   display: block;
-}
-
-.sidebar-hidden {
-   width: 0;
-}
-
-.main-content {
-   transition: 0.3s;
-   margin-left: 250px;
-}
-
-.content-expanded {
-   transition: 0.3s;
-   margin-left: 0;
-}
-
+/* Loading */
 .loading {
    width: 160px;
    height: 160px;
@@ -76,7 +54,6 @@
    mask: radial-gradient(circle 10px, #0000 90%, #000);
    animation: sh7 0.75s infinite linear;
 }
-
 @keyframes sh7 {
    0% {
       transform: rotate(0deg);
@@ -85,3 +62,4 @@
       transform: rotate(360deg);
    }
 }
+/* End of Loading */

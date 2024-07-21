@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Andika } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const andika = Andika({ subsets: ["latin"], weight: "400" });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
          >
             <Navbar />
             {children}
+            <Footer />
          </body>
       </html>
    );
