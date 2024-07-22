@@ -15,26 +15,28 @@ const ListAnime = ({ api, title, linkHref, linkTitle }) => {
       <>
          <div className="flex flex-col justify-center items-center mt-1">
             <div className="flex font-bold text-xl mb-2 gap-2">
-               <div className="font-bold text-color-primary">{title}</div>
+               <div className="font-bold text-color-light">{title}</div>
                {linkHref && linkTitle ? (
                   <Link
                      href={linkHref}
-                     className="text-color-primary hover:text-color-accent"
+                     passHref
+                     className="text-color-accent hover:scale-105"
                   >
                      {linkTitle}
                   </Link>
                ) : linkHref == "" || linkTitle == "" ? null : null}
             </div>
-            <div className="gap-2 inline-grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 mb-1">
+            <div className="text-color-accent text-center gap-2 inline-grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 mb-1">
                {api.data?.map((anime, index) => (
                   <Link
                      href={`/anime/res/${anime.mal_id}`}
+                     passHref
                      key={index}
-                     className="text-color-primary hover:text-color-accent cursor-pointer transition-all relative"
+                     className="relative hover:scale-105"
                   >
                      <div className="relative">
                         {loading && (
-                           <div className="absolute inset-0 flex items-center justify-center bg-color-secondary rounded">
+                           <div className="absolute inset-0 flex items-center justify-center bg-color-soft rounded">
                               <div className="loader border-t-4 border-color-accent rounded-full w-6 h-6 animate-spin"></div>
                            </div>
                         )}
@@ -47,11 +49,9 @@ const ListAnime = ({ api, title, linkHref, linkTitle }) => {
                            className="max-w-40 max-h-48 rounded object-cover"
                            priority
                         />
-                        <div>
-                           <p className="absolute bottom-0 left-0 right-0 text-md text-center bg-color-dark bg-opacity-70 rounded">
-                              {anime.title}
-                           </p>
-                        </div>
+                        <p className="absolute bottom-0 left-0 right-0 bg-color-dark bg-opacity-80 border-t border-color-dark rounded-b">
+                           {anime.title}
+                        </p>
                      </div>
                   </Link>
                ))}

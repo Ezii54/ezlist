@@ -23,11 +23,41 @@
 }
 /* end of navbar */
 
+/* sidebar */
+.sidebar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 200px;
+   height: 100%;
+   background-color: #161b22;
+   transition: 0.3s;
+   overflow-x: hidden;
+}
+
+.sidebar-hidden {
+   width: 0px;
+}
+
+.sidebar a {
+   display: block;
+}
+
+.main-content {
+   margin-left: 200px;
+   transition: 0.3s;
+}
+
+.content-expanded {
+   margin-left: 0;
+}
+/* end of sidebar */
+
 /* Loading */
 .loading {
    width: 160px;
    height: 160px;
-   color: #0d6efd;
+   color: #77bdfb;
    background: radial-gradient(
             150% 150% at left -40% top -40%,
             #0000 98%,

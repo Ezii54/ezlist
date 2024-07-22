@@ -19,11 +19,13 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body
-            className={`${andika.className} bg-color-dark text-color-primary`}
+            className={`${andika.className} bg-color-secondary text-color-light`}
          >
             <Navbar />
-            {children}
-            <Footer />
+            <div className="p-2">
+               {children}
+               <Footer />
+            </div>
          </body>
       </html>
    );

@@ -22,7 +22,6 @@ const Page = async () => {
          <section>
             <Search />
          </section>
-         <div className="border-t-2 border-color-accent mt-1"></div>
          <section>
             <ListAnime
                api={popAnime}
@@ -31,7 +30,7 @@ const Page = async () => {
                linkTitle="(View More)"
             />
          </section>
-         <div className="border-t-2 border-color-accent mt-1"></div>
+         <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
             <ListAnime
                api={recAnime}
@@ -40,17 +39,16 @@ const Page = async () => {
                linkTitle=""
             />
          </section>
-         <div className="border-t-2 border-color-accent mt-1"></div>
+         <hr className="text-color-dark text-opacity-80 mt-1" />
          <ListLetter />
-         <div className="border-t-2 border-color-accent mt-1"></div>
+         <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
-            <div className="text-color-primary">
+            <div className="">
                <ListGenre api={genreAnime} title={"Genres:"} />
                <ListGenre api={themeAnime} title={"Themes:"} />
                <ListGenre api={demographicsAnime} title={"Demographics:"} />
             </div>
          </section>
-         <div className="border-t-2 border-color-accent mt-1"></div>
       </div>
    );
 };

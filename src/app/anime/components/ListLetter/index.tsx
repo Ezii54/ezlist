@@ -4,14 +4,15 @@ const ListLetter = () => {
    const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
    return (
-      <div className="py-1">
-         <div className="text-center mb-1 text-xl font-bold">
-            Search by Letter
-         </div>
-         <div className="alphabet-links flex flex-row flex-wrap gap-3 justify-center">
+      <div>
+         <p className="text-center mb-1 text-xl font-bold">Search by Letter</p>
+         <div className="grid grid-cols-9 gap-2">
+            <p className="text-center border border-color-primary bg-color-soft rounded">
+               #
+            </p>
             {letters.map((id) => (
                <Link href={`/anime/res/letter/${id}`} key={id}>
-                  <div className="letter-link hover:text-color-accent">
+                  <div className="text-color-accent hover:scale-105 text-center border border-color-primary bg-color-soft rounded">
                      {id.toUpperCase()}
                   </div>
                </Link>

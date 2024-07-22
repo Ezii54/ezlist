@@ -18,13 +18,13 @@ const Search = () => {
    };
 
    return (
-      <div className="relative text-color-dark">
+      <div className="relative text-color-light">
          <input
             placeholder="Search Anime..."
             id="searching"
             ref={searchRef}
             onKeyDown={handleSearch}
-            className="w-full rounded p-2"
+            className="w-full rounded p-2 bg-color-soft"
          />
          <button
             className="text-color-accent absolute right-0 top-0 p-1"
