@@ -6,8 +6,8 @@ import Link from "next/link";
 const Page = async () => {
    const limitAnime = 6;
    const popAnime = await getResAnimeAPI("/top/anime", `limit=${limitAnime}`);
-   let rekAnime = await getResListAnimeAPI("/recommendations/anime", "entry");
-   rekAnime = await reproduce(rekAnime, limitAnime);
+   const rekAnime = await getResListAnimeAPI("/recommendations/anime", "entry");
+   const recAnime = await reproduce(rekAnime, limitAnime);
 
    return (
       <div className="">
@@ -39,7 +39,7 @@ const Page = async () => {
          <hr className="text-color-dark text-opacity-80" />
          <section>
             <ListAnime
-               api={rekAnime}
+               api={recAnime}
                title="Recommendations"
                linkHref=""
                linkTitle=""
