@@ -15,8 +15,17 @@ export const getDetAnimeAPI = async (resource) => {
 };
 
 export const getResListAnimeAPI = async (resource, objectProperty) => {
-   const response = await getDetAnimeAPI(resource);
-   return response.data.flatMap((item) => item[objectProperty]);
+   try {
+      const response = await getDetAnimeAPI(resource);
+      if (response && response.data) {
+         return response.data.flatMap((item) => item[objectProperty]);
+      } else {
+         throw new Error("Invalid response from API");
+      }
+   } catch (error) {
+      console.error("Error fetching data from API:", error);
+      throw error;
+   }
 };
 
 export const reproduce = async (data, gap) => {
