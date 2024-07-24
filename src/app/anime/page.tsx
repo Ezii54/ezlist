@@ -45,9 +45,9 @@ const Page = async () => {
          </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
-            <ListGenre api={genreAnime} title={"Genres:"} />
+            {/* <ListGenre api={genreAnime} title={"Genres:"} /> */}
             <ListGenre api={themeAnime} title={"Themes:"} />
-            <ListGenre api={demographicsAnime} title={"Demographics:"} />
+            {/* <ListGenre api={demographicsAnime} title={"Demographics:"} /> */}
          </section>
       </div>
    );
