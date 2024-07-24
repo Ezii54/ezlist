@@ -22,32 +22,15 @@ const Page = async () => {
          <section>
             <Search />
          </section>
-         <section>
-            <ListAnime
-               api={popAnime}
-               title="Most Popular"
-               linkHref="/anime/res/viewmore"
-               linkTitle="(View More)"
-            />
-         </section>
-         <hr className="text-color-dark text-opacity-80 mt-1" />
-         <section>
-            <ListAnime
-               api={recAnime}
-               title="Recommendations"
-               linkHref=""
-               linkTitle=""
-            />
-         </section>
-         <hr className="text-color-dark text-opacity-80 mt-1" />
+
          <section>
             <ListLetter />
          </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
-            <ListGenre api={genreAnime} title={"Genres:"} />
-            <ListGenre api={themeAnime} title={"Themes:"} />
-            <ListGenre api={demographicsAnime} title={"Demographics:"} />
+            <ListGenre api={genreAnime} title={"Genres"} />
+            <ListGenre api={themeAnime} title={"Themes"} />
+            <ListGenre api={demographicsAnime} title={"Demographics"} />
          </section>
       </div>
    );
