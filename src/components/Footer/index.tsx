@@ -7,12 +7,10 @@ const Footer = () => {
    return (
       <>
          <div className="flex flex-col text-center">
-            <div>
-               <hr className="text-color-dark text-opacity-80 mt-1" />
-            </div>
+            <hr className="text-color-dark text-opacity-80" />
             <br />
             <div>
-               <p className="text-xl font-bold mb-2">Join Us</p>
+               <p className="text-lg font-bold mb-2">Join Us</p>
                <div className="flex flex-row justify-center gap-2">
                   <Link
                      href={"https://chat.whatsapp.com/FdEcczEq2wzFWrfyk7Ygzx"}

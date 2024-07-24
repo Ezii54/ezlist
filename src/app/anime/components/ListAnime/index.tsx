@@ -14,7 +14,7 @@ const ListAnime = ({ api, title, linkHref, linkTitle }) => {
    return (
       <>
          <div className="flex flex-col justify-center items-center mt-1">
-            <div className="flex font-bold text-xl mb-2 gap-2">
+            <div className="flex font-bold text-lg mb-2 gap-2">
                <div className="font-bold text-color-light">{title}</div>
                {linkHref && linkTitle ? (
                   <Link
@@ -50,7 +50,7 @@ const ListAnime = ({ api, title, linkHref, linkTitle }) => {
                            priority
                         />
                         <p className="absolute bottom-0 left-0 right-0 bg-color-dark bg-opacity-80 border-t border-color-dark rounded-b">
-                           {anime.title}
+                           {anime.title_english}
                         </p>
                      </div>
                   </Link>

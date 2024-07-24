@@ -7,35 +7,32 @@ import Pagination from "@/Utilities/Pagination";
 import { getResAnimeAPI } from "@/libs/api";
 import Loading from "@/app/loading";
 
-const Page = async ({ params: { id } }) => {
+const Page = ({ params: { id } }) => {
    const [page, setPage] = useState(1);
    const [isLoading, setIsLoading] = useState(true);
-
-   interface AnimeResponse {
-      data: any[];
-      pagination: {
-         last_visible_page: number;
-      };
-   }
-
-   const [genAnime, setGenAnime] = useState<AnimeResponse>({
+   const [genAnime, setGenAnime] = useState({
       data: [],
       pagination: { last_visible_page: 1 },
    });
 
    const fetchData = async () => {
       setIsLoading(true);
-      const genAnime = await getResAnimeAPI(
-         "/anime",
-         `genres=${id} & page=${page} & limit=24`
-      );
-      setGenAnime(genAnime);
-      setIsLoading(false);
+      try {
+         const genAnimeResponse = await getResAnimeAPI(
+            "/anime",
+            `genres=${id} & page=${page} & limit=24`
+         );
+         setGenAnime(genAnimeResponse);
+      } catch (error) {
+         console.error("Error fetching data:", error);
+      } finally {
+         setIsLoading(false);
+      }
    };
 
    useEffect(() => {
       fetchData();
-   }, [page]);
+   }, [page, id]);
 
    return (
       <div>

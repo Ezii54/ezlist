@@ -5,7 +5,6 @@ const ListLetter = () => {
 
    return (
       <div>
-         <p className="text-center mb-1 text-xl font-bold">Search by Letter</p>
          <div className="grid grid-cols-9 gap-2">
             <p className="text-center border border-color-primary bg-color-soft rounded">
                #
