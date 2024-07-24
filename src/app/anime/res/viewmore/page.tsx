@@ -39,7 +39,7 @@ const Populer = () => {
 
    return (
       <div>
-         <HeaderMenu title={`Most Popular [Page: ${page}]`} />
+         <HeaderMenu title={`Most Popular`} />
          {isLoading ? (
             <Loading />
          ) : (

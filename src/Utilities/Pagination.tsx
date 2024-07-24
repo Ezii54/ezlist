@@ -16,26 +16,26 @@ const Pagination = ({ page, lastPage, setPage }) => {
    };
 
    return (
-      <div className="flex justify-center items-center py-2 px-2 gap-2 text-color-primary text-xl">
+      <div className="flex items-center justify-center py-2 px-2 gap-2 font-bold">
          {page <= 1 ? (
             <ArrowFatLineLeft size={32} />
          ) : (
             <button
                onClick={handlePrevPage}
-               className="underline hover:text-color-accent transition-all"
+               className="text-color-accent hover:scale-105"
             >
                <ArrowFatLineLeft size={32} />
             </button>
          )}
          <div>
-            [{page}/{lastPage}]
+            [ {page} / {lastPage} ]
          </div>
          {page >= lastPage ? (
             <ArrowFatLineRight size={32} />
          ) : (
             <button
                onClick={handleNextPage}
-               className="underline hover:text-color-accent transition-all"
+               className="text-color-accent hover:scale-105"
             >
                <ArrowFatLineRight size={32} />
             </button>

@@ -2,45 +2,52 @@
 
 import { getDetAnimeAPI } from "@/libs/api";
 import Image from "next/image";
+import { formatDate } from "@/Utilities/FormatDate";
 
 const Page = async ({ params: { id } }) => {
    const anime = await getDetAnimeAPI(`/anime/${id}`);
 
    return (
-      <div className="text-color-primary p-2">
-         <div className="text-xl">
-            {anime.data.title} - (
-            {anime.data.year == null ? "Unknown" : anime.data.year})
+      <>
+         <div>
+            <p className="text-lg text-center">{anime.data.title}</p>
          </div>
-         <div className="flex flex-row">
-            <div className="flex flex-col">
-               <Image
-                  src={anime.data.images.webp.image_url}
-                  alt={anime.data.images.jpg.image_url}
-                  width={160}
-                  height={192}
-                  className="max-w-40 max-h-48 rounded object-cover mb-2 mt-2"
-               />
-               <hr />
-               <p className="text-center text-sm py-1">Information</p>
-               <hr />
-               <div className="text-xs px-2">
-                  <p className="flex mt-1">Score: {anime.data.score}</p>
-                  <p className="flex mt-1">Ranked: #{anime.data.rank}</p>
-                  <p className="flex mt-1">
-                     Popularity: #{anime.data.popularity}
-                  </p>
-                  <p className="flex mt-1">Episodes: {anime.data.episodes}</p>
-                  <p className="flex mt-1">Status: {anime.data.status}</p>
-                  <p className="flex mt-1">Aired: {anime.data.aired.from}</p>
+         <div className="flex gap-2">
+            <Image
+               src={anime.data.images.webp.image_url}
+               alt={anime.data.images.jpg.image_url}
+               width={160}
+               height={192}
+               className="max-w-40 max-h-48 object-cover rounded"
+            />
+            <div className="flex flex-col gap-1">
+               <div className="border border-color-dark bg-color-soft rounded p-1">
+                  <p className="text-sm text-center">Statistics</p>
+                  <hr className="text-color-dark text-opacity-80" />
+                  <div className="text-xs">
+                     <p className="">Score: {anime.data.score}</p>
+                     <p className="">Ranked: #{anime.data.rank}</p>
+                     <p className="">Popularity: #{anime.data.popularity}</p>
+                  </div>
+               </div>
+               <div className="border border-color-dark bg-color-soft rounded p-1">
+                  <p className="text-sm text-center">Information</p>
+                  <hr className="text-color-dark text-opacity-80" />
+                  <div className="text-xs">
+                     <p className="">Episodes: {anime.data.episodes}</p>
+                     <p className="">
+                        Aired: {formatDate(anime.data.aired.from)}
+                     </p>
+                     <p className="">Status: {anime.data.status}</p>
+                  </div>
                </div>
             </div>
-            <div className="px-2">
-               <p className="text-lg">Synopsis: </p>
-               <p>{anime.data.synopsis}</p>
-            </div>
          </div>
-      </div>
+         <div className="">
+            <p className="text-md text-center">Synopsis</p>
+            <p className="text-sm">{anime.data.synopsis}</p>
+         </div>
+      </>
    );
 };
 
