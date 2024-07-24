@@ -17,6 +17,8 @@ const Page = async () => {
       "filter=demographics"
    );
 
+   //console.log(themeAnime);
+
    return (
       <div className="p-1">
          <section>
