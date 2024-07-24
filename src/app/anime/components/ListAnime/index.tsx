@@ -50,7 +50,7 @@ const ListAnime = ({ api, title, linkHref, linkTitle }) => {
                            priority
                         />
                         <p className="absolute bottom-0 left-0 right-0 bg-color-dark bg-opacity-80 border-t border-color-dark rounded-b">
-                           {anime.title_english}
+                           {anime.title}
                         </p>
                      </div>
                   </Link>
