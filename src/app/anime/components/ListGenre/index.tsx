@@ -8,6 +8,7 @@ const ListGenre = ({ api, title }) => {
             {api.data?.map((anime, index) => (
                <Link
                   href={`/anime/res/genre/${anime.mal_id}`}
+                  passHref
                   key={index}
                   className="text-color-accent hover:scale-105 text-center border border-color-primary bg-color-soft rounded"
                >
