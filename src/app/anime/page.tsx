@@ -40,14 +40,14 @@ const Page = async () => {
             />
          </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
-         <ListLetter />
+         <section>
+            <ListLetter />
+         </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
-            <div className="">
-               <ListGenre api={genreAnime} title={"Genres:"} />
-               <ListGenre api={themeAnime} title={"Themes:"} />
-               <ListGenre api={demographicsAnime} title={"Demographics:"} />
-            </div>
+            <ListGenre api={genreAnime} title={"Genres:"} />
+            <ListGenre api={themeAnime} title={"Themes:"} />
+            <ListGenre api={demographicsAnime} title={"Demographics:"} />
          </section>
       </div>
    );
