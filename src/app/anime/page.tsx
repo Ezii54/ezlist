@@ -1,8 +1,6 @@
 import ListAnime from "@/app/anime/components/ListAnime";
 import { getResAnimeAPI, getResListAnimeAPI, reproduce } from "@/libs/api";
 import Search from "./components/Search";
-import ListGenre from "./components/ListGenre";
-import ListLetter from "./components/ListLetter";
 import Link from "next/link";
 
 const Page = async () => {
