@@ -1,15 +1,13 @@
-//import ListAnime from "@/app/anime/components/ListAnime";
-//import { getResAnimeAPI, getResListAnimeAPI, reproduce } from "@/libs/api";
+import ListAnime from "@/app/anime/components/ListAnime";
+import { getResAnimeAPI, getResListAnimeAPI, reproduce } from "@/libs/api";
 import Search from "./components/Search";
 import Link from "next/link";
 
 const Page = async () => {
-   {
-      /**const limitAnime = 6;
+   const limitAnime = 6;
    const popAnime = await getResAnimeAPI("/top/anime", `limit=${limitAnime}`);
    let rekAnime = await getResListAnimeAPI("/recommendations/anime", "entry");
-   rekAnime = await reproduce(rekAnime, limitAnime); */
-   }
+   rekAnime = await reproduce(rekAnime, limitAnime);
 
    return (
       <div className="">
@@ -30,7 +28,6 @@ const Page = async () => {
             </div>
          </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
-         {/**
          <section>
             <ListAnime
                api={popAnime}
@@ -47,7 +44,7 @@ const Page = async () => {
                linkHref=""
                linkTitle=""
             />
-         </section> */}
+         </section>
       </div>
    );
 };
