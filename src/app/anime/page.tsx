@@ -1,22 +1,28 @@
-import ListAnime from "@/app/anime/components/ListAnime";
-import { getResAnimeAPI, getResListAnimeAPI, reproduce } from "@/libs/api";
+//import ListAnime from "@/app/anime/components/ListAnime";
+import { getResAnimeAPI } from "@/libs/api";
 import Search from "./components/Search";
 import ListGenre from "./components/ListGenre";
 import ListLetter from "./components/ListLetter";
 
 const Page = async () => {
-   const limitAnime = 6;
-   const popAnime = await getResAnimeAPI("/top/anime", `limit=${limitAnime}`);
-   let recAnime = await getResListAnimeAPI("/recommendations/anime", "entry");
-   recAnime = await reproduce(recAnime, limitAnime);
+   //const limitAnime = 6;
+   //const popAnime = await getResAnimeAPI("/top/anime", `limit=${limitAnime}`);
+   //let recAnime = await getResListAnimeAPI("/recommendations/anime", "entry");
+   //recAnime = await reproduce(recAnime, limitAnime);
+
+   const genreAnime = await getResAnimeAPI("/genres/anime", "filter=genres");
+   const themeAnime = await getResAnimeAPI("/genres/anime", "filter=themes");
+   const demographicsAnime = await getResAnimeAPI(
+      "/genres/anime",
+      "filter=demographics"
+   );
 
    return (
       <div className="p-1">
          <section>
             <Search />
          </section>
-         <hr className="text-color-dark text-opacity-80 mt-1" />
-         <section>
+         {/**<section>
             <ListAnime
                api={popAnime}
                title="Most Popular"
@@ -32,28 +38,16 @@ const Page = async () => {
                linkHref=""
                linkTitle=""
             />
-         </section>
+         </section> */}
          <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
             <ListLetter />
          </section>
          <hr className="text-color-dark text-opacity-80 mt-1" />
          <section>
-            <ListGenre
-               api={await getResAnimeAPI("/genres/anime", "filter=genres")}
-               title={"Genres:"}
-            />
-            <ListGenre
-               api={await getResAnimeAPI("/genres/anime", "filter=themes")}
-               title={"Themes:"}
-            />
-            <ListGenre
-               api={await getResAnimeAPI(
-                  "/genres/anime",
-                  "filter=demographics"
-               )}
-               title={"Demographics:"}
-            />
+            <ListGenre api={genreAnime} title={"Genres"} />
+            <ListGenre api={themeAnime} title={"Themes"} />
+            <ListGenre api={demographicsAnime} title={"Demographics"} />
          </section>
       </div>
    );
