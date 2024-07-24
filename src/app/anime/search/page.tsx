@@ -1,10 +1,13 @@
-import { getDetAnimeAPI } from "@/libs/api";
+import { getResAnimeAPI } from "@/libs/api";
 import Search from "@/app/anime/components/Search";
 import ListGenre from "@/app/anime/components/ListGenre";
 import ListLetter from "@/app/anime/components/ListLetter";
 
 const Page = async () => {
-   const genreAnime = await getDetAnimeAPI("/genres/anime");
+   const genreAnime = await getResAnimeAPI(
+      "/genres/anime",
+      "filter=genres & filter=themes"
+   );
 
    return (
       <div className="p-1">
