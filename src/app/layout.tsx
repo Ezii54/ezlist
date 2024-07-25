@@ -3,7 +3,6 @@ import { Andika } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AdSense from "@/components/AdSense/AdSense";
 
 const andika = Andika({ subsets: ["latin"], weight: "400" });
 
@@ -19,9 +18,6 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <head>
-            <AdSense pId="5631017031765660" />
-         </head>
          <body
             className={`${andika.className} bg-color-secondary text-color-light`}
          >
