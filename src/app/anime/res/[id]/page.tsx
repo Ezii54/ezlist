@@ -1,9 +1,10 @@
 import { getDetAnimeAPI } from "@/libs/api";
 import Image from "next/image";
 import { formatDate } from "@/Utilities/FormatDate";
+import Link from "next/link";
 
 const Page = async ({ params: { id } }) => {
-   const anime = await getDetAnimeAPI(`/anime/${id}`);
+   const anime = await getDetAnimeAPI(`/anime/${id}/full`);
 
    return (
       <>
@@ -55,6 +56,24 @@ const Page = async ({ params: { id } }) => {
                         {anime.data.studios
                            .map((studio) => studio.name)
                            .join(", ")}
+                     </p>
+                     <p>
+                        Streaming:{" "}
+                        {anime.data.streaming.map((streaming, index) => (
+                           <span key={index}>
+                              <Link
+                                 href={streaming.url}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="text-color-accent hover:scale-105"
+                              >
+                                 {streaming.name}
+                              </Link>
+                              {index < anime.data.streaming.length - 1
+                                 ? ", "
+                                 : ""}
+                           </span>
+                        ))}
                      </p>
                   </div>
                </div>
