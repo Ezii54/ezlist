@@ -18,6 +18,7 @@ const config: Config = {
                green: "#28A745",
                blue: "#0366D6",
                red: "#D73A49",
+               purple: "#5851DB",
             },
          },
       },

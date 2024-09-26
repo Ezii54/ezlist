@@ -8,14 +8,6 @@ const Page = async () => {
 
    return (
       <div className="flex flex-col gap-5">
-         <section className="">
-            <p className="text-center">
-               ezList adalah sebuah Website yang berisi kumpulan Anime & Manga
-               dalam bentuk daftar yang lengkap, memudahkan pengguna untuk
-               melakukan pencaharian. Namun perlu diingat, kami tidak
-               menyediakan tempat untuk menonton Anime / membaca Manga.
-            </p>
-         </section>
          <section>
             <Search />
          </section>
