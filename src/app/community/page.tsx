@@ -31,7 +31,7 @@ const page = () => {
                Un-Official Community
             </p>
             <LinkWhatsapp
-               linkHref="https://chat.whatsapp.com/J5jnZwR4jjjIDShGwyaNx3"
+               linkHref="https://chat.whatsapp.com/CnCuSjSvLRj4dyS4D3qhAg"
                titleHref={`(『Oƚαƙυ αɾҽα • ヅ)`}
                descHref={``}
             />
