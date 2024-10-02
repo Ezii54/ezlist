@@ -28,7 +28,7 @@ const page = () => {
          </section>
          <section className="flex flex-col gap-1 p-1 border rounded bg-color-md border-color-xl">
             <p className="px-5 border-b border-b-color-xl">
-               A Special Thanks To
+               A Special Thanks To:
             </p>
             <LinkInstagram
                linkHref={`https://www.instagram.com/zibransrr/`}
