@@ -17,23 +17,13 @@ const page = () => {
             </p>
             <LinkWhatsapp
                linkHref="#"
-               titleHref={`(Randomination TOTAL)`}
+               titleHref={`(Randomination)`}
                descHref={`(Private Edition)`}
             />
             <LinkWhatsapp
-               linkHref="https://chat.whatsapp.com/FdEcczEq2wzFWrfyk7Ygzx"
-               titleHref={`(Randomination TOTAL)`}
+               linkHref="https://chat.whatsapp.com/FinnozuIjtc1RBfCt8kYu9"
+               titleHref={`(Otaku area) :re`}
                descHref={`(Public Edition)`}
-            />
-         </section>
-         <section className="flex flex-col gap-1 p-1 border rounded bg-color-md border-color-xl">
-            <p className="px-5 border-b border-b-color-xl">
-               Un-Official Community
-            </p>
-            <LinkWhatsapp
-               linkHref="https://chat.whatsapp.com/D3lDNV3IxHB3459EdH38Vp"
-               titleHref={`(『Oƚαƙυ αɾҽα • ヅ)`}
-               descHref={``}
             />
          </section>
          <section className="flex flex-col gap-1 p-1 border rounded bg-color-md border-color-xl">
